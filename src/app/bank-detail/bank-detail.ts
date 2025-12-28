@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Bank } from '../bank';
+import { NgIf, UpperCasePipe } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-bank-detail',
-  imports: [],
   templateUrl: './bank-detail.html',
-  styleUrl: './bank-detail.css',
+  styleUrls: ['./bank-detail.css'],
+  imports: [NgIf, UpperCasePipe]
 })
 export class BankDetail {
-
+  @Input() bank: Bank | null = null;
 }

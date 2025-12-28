@@ -7,7 +7,7 @@ import { Banks } from './banks/banks';
   standalone: true,
   imports: [RouterOutlet, Banks],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 
 export class App {

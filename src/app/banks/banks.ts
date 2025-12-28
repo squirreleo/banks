@@ -1,27 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Bank } from '../bank';
+import { Component } from '@angular/core';
 import { BANKS } from '../banks';
+import { Bank } from '../bank';
 import { NgFor } from '@angular/common';
+import { BankDetail } from '../bank-detail/bank-detail';
 
 @Component({
   standalone: true,
   selector: 'app-banks',
-  imports: [NgFor],
+  imports: [NgFor, BankDetail],
   templateUrl: './banks.html',
-  styleUrl: './banks.css',
+  styleUrls: ['./banks.css']
 })
-
-export class Banks implements OnInit {
+export class Banks {
   banks = BANKS;
-  selectedBank!: Bank;
-
-  constructor() {}
+  selectedBank: Bank | null = null;
 
   onSelect(bank: Bank): void {
     this.selectedBank = bank;
-  }
-
-  ngOnInit(): void{
-    
   }
 }
